@@ -7,7 +7,6 @@ import { DogSpinner, DogContainer } from './voxel-dog-loader'
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
 }
-var count = 0
 
 const VoxelDog = () => {
   const refContainer = useRef()
@@ -25,19 +24,19 @@ const VoxelDog = () => {
   const [scene] = useState(new THREE.Scene())
   const [_controls, setControls] = useState()
 
+  
   const handleWindowResize = useCallback(() => {
     const { current: container } = refContainer
     if (container && renderer) {
       const scW = container.clientWidth
       const scH = container.clientHeight
-
+      
       renderer.setSize(scW, scH)
     }
   }, [renderer])
-
+  
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
-    count += 1
     const { current: container } = refContainer
     if (container && !renderer) {
       const scW = container.clientWidth
@@ -47,7 +46,6 @@ const VoxelDog = () => {
         antialias: true,
         alpha: true,
       })
-      console.log(count)
       renderer.setPixelRatio(window.devicePixelRatio)
       renderer.setSize(scW, scH)
       renderer.outputEncoding = THREE.sRGBEncoding
@@ -76,14 +74,12 @@ const VoxelDog = () => {
       controls.autoRotate = true
       controls.target = target
       setControls(controls)
-
       loadGLTFModel(scene, '/dog.glb', {
         receiveShadow: false,
         castShadow: false,
       }).then(() => {
         animate()
         setLoading(false)
-        console.log('dog')
       })
 
       let req = null
@@ -126,8 +122,8 @@ const VoxelDog = () => {
   }, [renderer, handleWindowResize])
 
   return (
-    // <DogContainer ref={refContainer}>{loading && <DogSpinner />}</DogContainer>
-    <DogContainer ref={refContainer} />
+    <DogContainer ref={refContainer}>{loading && <DogSpinner />}</DogContainer>
+    
   )
 }
 
