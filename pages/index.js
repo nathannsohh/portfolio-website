@@ -71,7 +71,7 @@ const Page = () => {
             About Me
           </Heading>
           <Paragraph>
-            I am Nathan, a Computer Science sophomore studying in Nanyang
+            I am Nathan, a penultimate year Computer Science student in Nanyang
             Technological University's School of Computer Science and
             Engineering. I have a passion for all things tech and I am always
             willing to learn new skills and improve myself!
@@ -114,7 +114,8 @@ const Page = () => {
             Hobbies
           </Heading>
           <Paragraph>
-            I enjoy Music, Travelling, Software Engineering and Bouldering.
+            I enjoy Music, Travelling, Bouldering and learning about new and
+            emerging technologies.
           </Paragraph>
         </Section>
       </Container>
