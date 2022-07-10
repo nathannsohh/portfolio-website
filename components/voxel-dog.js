@@ -24,17 +24,16 @@ const VoxelDog = () => {
   const [scene] = useState(new THREE.Scene())
   const [_controls, setControls] = useState()
 
-  
   const handleWindowResize = useCallback(() => {
     const { current: container } = refContainer
     if (container && renderer) {
       const scW = container.clientWidth
       const scH = container.clientHeight
-      
+
       renderer.setSize(scW, scH)
     }
   }, [renderer])
-  
+
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     const { current: container } = refContainer
@@ -123,7 +122,6 @@ const VoxelDog = () => {
 
   return (
     <DogContainer ref={refContainer}>{loading && <DogSpinner />}</DogContainer>
-    
   )
 }
 
