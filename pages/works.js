@@ -2,7 +2,8 @@ import { Container, Box, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
-import testImage from '../public/images/test-image.png'
+import projectionPlannerScreenshot from '../public/images/project-planner-screenshot.png'
+import YOUtilityScreenshot from '../public/images/YOUtilityScreenshots.png'
 import Layout from '../components/layouts/article'
 
 const Works = () => {
@@ -15,12 +16,20 @@ const Works = () => {
 
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section>
-            <WorkGridItem id="inkdrop" title="Inkdrop" thumbnail={testImage}>
+            <WorkGridItem
+              id="youtility"
+              title="YOUtility"
+              thumbnail={YOUtilityScreenshot}
+            >
               Project description
             </WorkGridItem>
           </Section>
           <Section>
-            <WorkGridItem id="project2" title="Project 2" thumbnail={testImage}>
+            <WorkGridItem
+              id="investment-projection"
+              title="Investment Projection"
+              thumbnail={projectionPlannerScreenshot}
+            >
               Project Description 2
             </WorkGridItem>
           </Section>
