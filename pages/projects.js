@@ -21,7 +21,8 @@ const Projects = () => {
               title="YOUtility"
               thumbnail={YOUtilityCover}
             >
-              Project description
+              An Android application that tracks water and electricity usage of
+              households
             </WorkGridItem>
           </Section>
           <Section>
@@ -30,7 +31,8 @@ const Projects = () => {
               title="Investment Projection"
               thumbnail={projectionPlannerScreenshot}
             >
-              Project Description 2
+              A website that projects user's expected investment returns based
+              on base and monthly inputs
             </WorkGridItem>
           </Section>
           <Section>
@@ -39,7 +41,7 @@ const Projects = () => {
               title="Portfolio Website"
               thumbnail={projectionPlannerScreenshot}
             >
-              Project Description 3
+              My very own portfolio website!
             </WorkGridItem>
           </Section>
           <Section>
@@ -48,7 +50,8 @@ const Projects = () => {
               title="Flask Restful API"
               thumbnail={projectionPlannerScreenshot}
             >
-              Project Description 3
+              A RESTful API backend application built to learn to develop
+              backend servers
             </WorkGridItem>
           </Section>
         </SimpleGrid>
