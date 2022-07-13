@@ -77,7 +77,7 @@ const Page = () => {
             willing to learn new skills and improve myself!
           </Paragraph>
           <Box align="center" my={4}>
-            <NextLink href="/works">
+            <NextLink href="/projects">
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
                 My Portfolio
               </Button>
