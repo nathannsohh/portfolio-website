@@ -47,7 +47,7 @@ const Projects = () => {
           <Section>
             <WorkGridItem
               id="flask-restful-api"
-              title="Flask Restful API"
+              title="Backend Server"
               thumbnail={projectionPlannerScreenshot}
             >
               A RESTful API backend application built to learn to develop
