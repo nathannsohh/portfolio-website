@@ -12,17 +12,17 @@ const Project = () => {
           Investment Projection <Badge>2022</Badge>
         </Title>
         <P>
-          This Flask application was my first dive into backend development and
-          it was a way for me to learn and understand what a backend server was
-          and how to create CRUD API endpoints. Through this, I also learned how
-          to use tools such as Postman and pgAdmin to test the server and
-          visualise the database.
+          This simple website would be part of robo-advisories' websites where
+          it would take in a user's base and monthly input and project how the
+          investments would perform over a couple of years. It posts the data
+          onto an API which would return the projection data, and the app would
+          visualise the data on a graph for users.
         </P>
         <List my={4}>
           <ListItem>
             <Meta>Repository</Meta>
             <Link href="https://github.com/nathannsohh/Endowus_assessment">
-            https://github.com/nathannsohh/Endowus_assessment
+              https://github.com/nathannsohh/Endowus_assessment
               <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
@@ -32,12 +32,16 @@ const Project = () => {
           </ListItem>
         </List>
         <WorkImage
-          src="/images/YOUtility-screenshots-1.png"
-          alt="Youtility-1"
+          src="/images/investment-projection-cover-pic.png"
+          alt="investment-projection-1"
         />
         <WorkImage
-          src="/images/YOUtility-screenshots-2.png"
-          alt="Youtility-2"
+          src="/images/investment-projection-screenshot-1.png"
+          alt="investment-projection-2"
+        />
+        <WorkImage
+          src="/images/investment-projection-screenshot-2.png"
+          alt="investment-projection-3"
         />
       </Container>
     </Layout>
