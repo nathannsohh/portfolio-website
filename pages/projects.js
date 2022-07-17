@@ -2,8 +2,9 @@ import { Container, Box, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
-import projectionPlannerScreenshot from '../public/images/project-planner-screenshot.png'
+import projectionPlannerScreenshot from '../public/images/investment-projection-cover-pic.png'
 import YOUtilityCover from '../public/images/YOUtility-cover-pic.png'
+import backendServerCover from '../public/images/backend-server-cover-pic.png'
 import Layout from '../components/layouts/article'
 
 const Projects = () => {
@@ -48,7 +49,7 @@ const Projects = () => {
             <WorkGridItem
               id="flask-restful-api"
               title="Backend Server"
-              thumbnail={projectionPlannerScreenshot}
+              thumbnail={backendServerCover}
             >
               A RESTful API backend application built to learn to develop
               backend servers

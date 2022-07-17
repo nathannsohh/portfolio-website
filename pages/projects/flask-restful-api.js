@@ -32,12 +32,16 @@ const Project = () => {
           </ListItem>
         </List>
         <WorkImage
-          src="/images/YOUtility-screenshots-1.png"
-          alt="Youtility-1"
+          src="/images/backend-server-screenshot-1.png"
+          alt="backend-server-1"
         />
         <WorkImage
-          src="/images/YOUtility-screenshots-2.png"
-          alt="Youtility-2"
+          src="/images/backend-server-screenshot-2.png"
+          alt="backend-server-2"
+        />
+        <WorkImage
+          src="/images/backend-server-screenshot-3.png"
+          alt="backend-server-3"
         />
       </Container>
     </Layout>
