@@ -6,6 +6,8 @@ import {
   Input,
   Button,
   Textarea,
+  useToast,
+  useColorModeValue
 } from '@chakra-ui/react'
 import emailjs from '@emailjs/browser'
 
@@ -17,6 +19,8 @@ export const HookForm = () => {
     formState: { errors, isSubmitting },
   } = useForm()
 
+  const toast = useToast()
+  const color = useColorModeValue('gray.600', 'gray.800')
   const sendEmail = formData => {
     emailjs
       .send(
@@ -27,21 +31,35 @@ export const HookForm = () => {
       )
       .then(
         result => {
-          console.log(result.text)
+            console.log(result.text)
+          toast({
+              title: 'Message Sent!',
+              description: "I will contact you shortly.",
+              status: 'success',
+              duration: 4000,
+              isClosable: true,
+              position: 'bottom'
+          })
+          reset()
         },
         error => {
           console.log(error.text)
+          toast({
+            title: 'Error',
+            description: "An error occured. Please try again later.",
+            status: 'error',
+            duration: 4000,
+            isClosable: true,
+            position: 'bottom'
+        })
+        reset()
         }
       )
-    reset()
   }
 
   const onSubmit = async data => {
     return new Promise(resolve => {
-      setTimeout(() => {
         sendEmail(data)
-        resolve()
-      }, 2000)
     })
   }
 
@@ -50,6 +68,7 @@ export const HookForm = () => {
       <FormControl isInvalid={errors.from_name}>
         <FormLabel htmlFor="name">Name</FormLabel>
         <Input
+        borderColor={color}
           id="name"
           placeholder="your name"
           {...register('from_name', {
