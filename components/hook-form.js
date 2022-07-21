@@ -20,7 +20,7 @@ export const HookForm = () => {
   } = useForm()
 
   const toast = useToast()
-  const color = useColorModeValue('gray.600', 'gray.800')
+  const color = useColorModeValue('gray.400', 'whiteAlpha.300')
   const sendEmail = formData => {
     emailjs
       .send(
@@ -34,8 +34,9 @@ export const HookForm = () => {
             console.log(result.text)
           toast({
               title: 'Message Sent!',
-              description: "I will contact you shortly.",
+              description: "I will get back to you as soon as I can! :-)",
               status: 'success',
+              variant: 'subtle',
               duration: 4000,
               isClosable: true,
               position: 'bottom'
@@ -48,6 +49,7 @@ export const HookForm = () => {
             title: 'Error',
             description: "An error occured. Please try again later.",
             status: 'error',
+            variant: 'subtle',
             duration: 4000,
             isClosable: true,
             position: 'bottom'
@@ -68,7 +70,7 @@ export const HookForm = () => {
       <FormControl isInvalid={errors.from_name}>
         <FormLabel htmlFor="name">Name</FormLabel>
         <Input
-        borderColor={color}
+          borderColor={color}
           id="name"
           placeholder="your name"
           {...register('from_name', {
@@ -83,6 +85,7 @@ export const HookForm = () => {
       <FormControl isInvalid={errors.from_email} mt={6}>
         <FormLabel htmlFor="email">Email</FormLabel>
         <Input
+          borderColor={color}
           id="from_email"
           placeholder="someone@example.com"
           {...register('from_email', {
@@ -100,6 +103,7 @@ export const HookForm = () => {
       <FormControl isInvalid={errors.name} mt={6} mb={2}>
         <FormLabel htmlFor="message">Message</FormLabel>
         <Textarea
+          borderColor={color}
           id="message"
           placeholder="write your message in here"
           resize="none"
