@@ -7,12 +7,18 @@ import {
   useColorModeValue,
   Button,
   chakra,
+  SimpleGrid,
+  Link,
+  List,
+  ListItem,
+  Icon,
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Layout from '../components/layouts/article.js'
 import Section from '../components/section.js'
 import Paragraph from '../components/paragraph.js'
 import { BioSection, BioYear } from '../components/bio.js'
+import { IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop),
@@ -117,6 +123,53 @@ const Page = () => {
             I enjoy Music, Travelling, Bouldering and learning about new and
             emerging technologies.
           </Paragraph>
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            Socials
+          </Heading>
+          <List>
+            <ListItem>
+              <Link href="https://github.com/nathannsohh" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoGithub} />}
+                >
+                  @nathannsohh
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://www.linkedin.com/in/nathansoh/"
+                target="_blank"
+              >
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoLinkedin} />}
+                >
+                  Nathan Soh
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://www.instagram.com/nathannsohh/"
+                target="_blank"
+              >
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoInstagram} />}
+                >
+                  @nathannsohh
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
         </Section>
       </Container>
     </Layout>
