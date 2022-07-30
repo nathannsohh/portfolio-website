@@ -7,7 +7,6 @@ import {
   useColorModeValue,
   Button,
   chakra,
-  SimpleGrid,
   Link,
   List,
   ListItem,
@@ -85,9 +84,38 @@ const Page = () => {
           <Box align="center" my={4}>
             <NextLink href="/projects">
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-                My Portfolio
+                My Projects
               </Button>
             </NextLink>
+          </Box>
+        </Section>
+
+        <Section delay={0.2}>
+          <Heading as="h3" variant="section-title">
+            Skills
+          </Heading>
+          <Box
+            borderRadius="lg"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            p={3}
+            mb={6}
+          >
+            <Heading as="h4" fontSize={18}>
+              Languages
+            </Heading>
+            <Paragraph>
+              Python, Java, C/C++, HTML, CSS, Javascript, SQL, Swift
+            </Paragraph>
+            <Heading as="h4" fontSize={18} mt={4}>
+              Libraries &amp; Frameworks
+            </Heading>
+            <Paragraph>ReactJS, Flask, PostgreSQL, MySQL</Paragraph>
+            <Heading as="h4" fontSize={18} mt={4}>
+              Tools
+            </Heading>
+            <Paragraph>
+              Git, Github, Postman, pgadmin, AWS RDS, AWS EC2, AWS Cognito
+            </Paragraph>
           </Box>
         </Section>
 
@@ -102,6 +130,11 @@ const Page = () => {
           <BioSection>
             <BioYear>2017</BioYear>
             Completed 'A' Levels in Pioneer Junior College.
+          </BioSection>
+          <BioSection>
+            <BioYear>2018</BioYear>
+            Graduated as a Reconnaissance Specialist in the Singapore Armed
+            Forces.
           </BioSection>
           <BioSection>
             <BioYear>2020</BioYear>
@@ -120,8 +153,8 @@ const Page = () => {
             Hobbies
           </Heading>
           <Paragraph>
-            I enjoy Music, Travelling, Bouldering and learning about new and
-            emerging technologies.
+            I enjoy Music, Travelling, Bouldering, playing Video Games and
+            learning about new and emerging technologies.
           </Paragraph>
         </Section>
 

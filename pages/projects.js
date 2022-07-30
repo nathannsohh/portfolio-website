@@ -5,6 +5,7 @@ import { WorkGridItem } from '../components/grid-item'
 import projectionPlannerScreenshot from '../public/images/investment-projection-cover-pic.png'
 import YOUtilityCover from '../public/images/YOUtility-cover-pic.png'
 import backendServerCover from '../public/images/backend-server-cover-pic.png'
+import portfolioCover from '../public/images/portfolio-website-cover.png'
 import Layout from '../components/layouts/article'
 
 const Projects = () => {
@@ -40,7 +41,7 @@ const Projects = () => {
             <WorkGridItem
               id="portfolio-website"
               title="Portfolio Website"
-              thumbnail={projectionPlannerScreenshot}
+              thumbnail={portfolioCover}
             >
               My very own portfolio website!
             </WorkGridItem>

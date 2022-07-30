@@ -9,7 +9,7 @@ const Project = () => {
     <Layout title="Flask Restful API">
       <Container>
         <Title>
-          Flask Restful API <Badge>2022</Badge>
+          Backend Server <Badge>2022</Badge>
         </Title>
         <P>
           This Flask application was my first dive into backend development and

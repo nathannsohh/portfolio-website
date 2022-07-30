@@ -7,7 +7,7 @@ import {
   Button,
   Textarea,
   useToast,
-  useColorModeValue
+  useColorModeValue,
 } from '@chakra-ui/react'
 import emailjs from '@emailjs/browser'
 
@@ -22,24 +22,25 @@ export const HookForm = () => {
   const toast = useToast()
   const color = useColorModeValue('gray.400', 'whiteAlpha.300')
   const sendEmail = formData => {
+    console.log(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
     emailjs
       .send(
-        'service_5agm226',
-        'template_58fwgxo',
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         formData,
-        'EyE5YCqXjwEdL0fuX'
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
       .then(
         result => {
-            console.log(result.text)
+          console.log(result.text)
           toast({
-              title: 'Message Sent!',
-              description: "I will get back to you as soon as I can! :-)",
-              status: 'success',
-              variant: 'subtle',
-              duration: 4000,
-              isClosable: true,
-              position: 'bottom'
+            title: 'Message Sent!',
+            description: 'I will get back to you as soon as I can! :-)',
+            status: 'success',
+            variant: 'subtle',
+            duration: 3000,
+            isClosable: true,
+            position: 'bottom',
           })
           reset()
         },
@@ -47,21 +48,21 @@ export const HookForm = () => {
           console.log(error.text)
           toast({
             title: 'Error',
-            description: "An error occured. Please try again later.",
+            description: 'An error occured. Please try again later.',
             status: 'error',
             variant: 'subtle',
-            duration: 4000,
+            duration: 3000,
             isClosable: true,
-            position: 'bottom'
-        })
-        reset()
+            position: 'bottom',
+          })
+          reset()
         }
       )
   }
 
   const onSubmit = async data => {
     return new Promise(resolve => {
-        sendEmail(data)
+      sendEmail(data)
     })
   }
 

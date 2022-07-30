@@ -36,22 +36,10 @@ const Project = () => {
             <Meta>Stack</Meta>
             <span>
               Next.js, ChakraUI, Framer Motion, Three.js, React Hook Form,
-              EmailJS
+              EmailJS, Firebase
             </span>
           </ListItem>
         </List>
-        <WorkImage
-          src="/images/investment-projection-cover-pic.png"
-          alt="investment-projection-1"
-        />
-        <WorkImage
-          src="/images/investment-projection-screenshot-1.png"
-          alt="investment-projection-2"
-        />
-        <WorkImage
-          src="/images/investment-projection-screenshot-2.png"
-          alt="investment-projection-3"
-        />
       </Container>
     </Layout>
   )

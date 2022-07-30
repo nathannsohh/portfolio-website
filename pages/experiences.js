@@ -11,11 +11,56 @@ import {
   Link,
   Button,
 } from '@chakra-ui/react'
-import NextLink from 'next/link'
 import { BioYear } from '../components/bio'
 import { DownloadIcon } from '@chakra-ui/icons'
+import { getDownloadURL, getStorage, ref } from 'firebase/storage'
+import { initializeApp } from 'firebase/app'
 
 const Experience = () => {
+  initializeApp({
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.FIREBASE_APP_ID,
+    measurementId: process.env.FIREBASE_MEASUREMENT_ID,
+  })
+  const storage = getStorage()
+  const gsReference = ref(storage, process.env.NEXT_PUBLIC_FIREBASE_RESUME_URL)
+
+  const downloadResume = () => {
+    getDownloadURL(gsReference)
+      .then(url => {
+        const xhr = new XMLHttpRequest()
+        xhr.responseType = 'blob'
+        xhr.onload = event => {
+          var a = document.createElement('a')
+          a.href = window.URL.createObjectURL(xhr.response)
+          a.download = 'Nathan_Soh_Resume'
+          a.style.display = 'none'
+          document.body.appendChild(a)
+          a.click()
+          var blob = xhr.response
+        }
+        xhr.open('GET', url)
+        xhr.send()
+      })
+      .catch(error => {
+        switch (error.code) {
+          case 'storage/object-not-found':
+            console.log('file does not exist')
+            break
+          case 'storage/unauthorized':
+            console.log("User doesn't have permission to access the object")
+            break
+          case 'storage/unknown':
+            console.log('Unknown error occurred, inspect the server response')
+            break
+        }
+      })
+  }
+
   return (
     <Layout>
       <Container>
@@ -119,11 +164,13 @@ const Experience = () => {
           </Box>
         </Section>
         <Box align="center" my={4}>
-          <NextLink href="/projects">
-            <Button leftIcon={<DownloadIcon />} colorScheme="teal">
-              Complete CV
-            </Button>
-          </NextLink>
+          <Button
+            leftIcon={<DownloadIcon />}
+            colorScheme="teal"
+            onClick={downloadResume}
+          >
+            Complete CV
+          </Button>
         </Box>
       </Container>
     </Layout>
