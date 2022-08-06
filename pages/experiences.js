@@ -78,7 +78,7 @@ const Experience = () => {
             <Heading fontSize={20} variant="section-title" mt={1} mb={1}>
               Fullstack Developer Intern @ Kinexcs
             </Heading>
-            <BioYear>May 2022 - Present</BioYear>
+            <BioYear>May 2022 - Aug 2022</BioYear>
 
             <UnorderedList mt={3} fontSize={16} fontWeight="light">
               <ListItem>

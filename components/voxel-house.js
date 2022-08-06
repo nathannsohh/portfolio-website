@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
-import { DogSpinner, DogContainer } from './voxel-dog-loader'
+import { HouseSpinner, HouseContainer } from './voxel-house-loader'
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
@@ -66,14 +66,18 @@ const VoxelDog = () => {
       camera.lookAt(target)
       setCamera(camera)
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
+      const directionalLight = new THREE.DirectionalLight(0xcccccc, 2)
+      const ambientLight = new THREE.AmbientLight(0x404040, 0.5)
+      directionalLight.position.set(-2, 1, 1)
+      directionalLight.castShadow = true
       scene.add(ambientLight)
+      scene.add(directionalLight)
 
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.autoRotate = true
       controls.target = target
       setControls(controls)
-      loadGLTFModel(scene, '/dog.glb', {
+      loadGLTFModel(scene, 'oldbuild_-_voxel_art_free/scene.gltf', {
         receiveShadow: false,
         castShadow: false,
       }).then(() => {
@@ -121,7 +125,9 @@ const VoxelDog = () => {
   }, [renderer, handleWindowResize])
 
   return (
-    <DogContainer ref={refContainer}>{loading && <DogSpinner />}</DogContainer>
+    <HouseContainer ref={refContainer}>
+      {loading && <HouseSpinner />}
+    </HouseContainer>
   )
 }
 
