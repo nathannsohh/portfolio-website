@@ -133,8 +133,8 @@ const Page = () => {
           </BioSection>
           <BioSection>
             <BioYear>2018</BioYear>
-            Graduated as a Reconnaissance Specialist in the Singapore Armed
-            Forces.
+            Graduated as a Reconnaissance Specialist from the Singapore Armed
+            Forces' Specialist Cadet School.
           </BioSection>
           <BioSection>
             <BioYear>2020</BioYear>

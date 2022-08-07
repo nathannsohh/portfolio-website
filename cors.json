@@ -1,6 +1,9 @@
 [
   {
-    "origin": ["http://localhost:3000"],
+    "origin": [
+      "http://localhost:3000",
+      "https://portfolio-website-nathannsohh.vercel.app"
+    ],
     "method": ["GET"],
     "maxAgeSeconds": 3600
   }
