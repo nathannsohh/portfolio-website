@@ -6,6 +6,7 @@ import projectionPlannerScreenshot from '../public/images/investment-projection-
 import YOUtilityCover from '../public/images/YOUtility-cover-pic.png'
 import backendServerCover from '../public/images/backend-server-cover-pic.png'
 import portfolioCover from '../public/images/portfolio-website-cover-pic.png'
+import recipelyCover from '../public/images/recipely-cover.png'
 import Layout from '../components/layouts/article'
 
 const Projects = () => {
@@ -19,12 +20,20 @@ const Projects = () => {
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section>
             <WorkGridItem
-              id="youtility"
-              title="YOUtility"
-              thumbnail={YOUtilityCover}
+              id="recipely"
+              title="Recipely"
+              thumbnail={recipelyCover}
             >
-              An Android application that tracks water and electricity usage of
-              households
+              A web application that tracks food inventory and suggests recipes
+            </WorkGridItem>
+          </Section>
+          <Section>
+            <WorkGridItem
+              id="portfolio-website"
+              title="Portfolio Website"
+              thumbnail={portfolioCover}
+            >
+              My very own portfolio website!
             </WorkGridItem>
           </Section>
           <Section>
@@ -39,11 +48,12 @@ const Projects = () => {
           </Section>
           <Section>
             <WorkGridItem
-              id="portfolio-website"
-              title="Portfolio Website"
-              thumbnail={portfolioCover}
+              id="youtility"
+              title="YOUtility"
+              thumbnail={YOUtilityCover}
             >
-              My very own portfolio website!
+              An Android application that tracks water and electricity usage of
+              households
             </WorkGridItem>
           </Section>
           <Section>

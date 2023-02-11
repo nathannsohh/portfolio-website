@@ -37,7 +37,7 @@ const Experience = () => {
         xhr.onload = event => {
           var a = document.createElement('a')
           a.href = window.URL.createObjectURL(xhr.response)
-          a.download = 'Nathan_Soh_Resume'
+          a.download = 'final_Nathan_Soh_Resume'
           a.style.display = 'none'
           document.body.appendChild(a)
           a.click()
@@ -82,20 +82,48 @@ const Experience = () => {
 
             <UnorderedList mt={3} fontSize={16} fontWeight="light">
               <ListItem>
-                Worked in an Agile team that was in charge of making mobile
-                applications.
+                Kinexcs is a med-tech start-up that provides AI-driven digital
+                therapy platforms and wearables to enable and empower people for
+                mobility and a better life.
               </ListItem>
               <ListItem>
-                Developed an IOS Computer Vision application using Swift and
-                Apple Vision.
+                Developed features for a Computer Vision IOS application using
+                Swift and Apple Vision in an agile software development team.
               </ListItem>
               <ListItem>
-                Built a production backend server from scratch using Flask,
-                Nginx and Gunicorn with a PostgreSQL database and deployed it on
-                AWS EC2.
+                Built a backend server from the ground up using Flask, with a
+                PostgreSQL database and deployed on AWS EC2.
               </ListItem>
               <ListItem>
-                Worked with AWS services such as Cognito, RDS and EC2.
+                Used AWS Cognito to set up the authentication service for the
+                app and AWS RDS to deploy the PostgreSQL database.
+              </ListItem>
+            </UnorderedList>
+          </Box>
+          <Box
+            borderRadius="lg"
+            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            p={3}
+            mb={6}
+            mt={3}
+          >
+            <Heading fontSize={20} variant="section-title" mt={1} mb={1}>
+              Software Developer Intern @ Shopback
+            </Heading>
+            <BioYear>Jan 2023 - Present</BioYear>
+
+            <UnorderedList mt={3} fontSize={16} fontWeight="light">
+              <ListItem>
+                Designed and developed custom Salesforce solutions using Apex
+                and Lightning components.
+              </ListItem>
+              <ListItem>
+                Created test classes and executed unit tests to ensure code
+                coverage and validate solutions
+              </ListItem>
+              <ListItem>
+                Participated in code reviews and contributed to the development
+                of best practices and standards.
               </ListItem>
             </UnorderedList>
           </Box>

@@ -104,7 +104,7 @@ const Page = () => {
               Languages
             </Heading>
             <Paragraph>
-              Python, Java, C/C++, HTML, CSS, Javascript, SQL, Swift
+              Python, Java, C/C++, HTML, CSS, Javascript, SQL, Swift, Apex
             </Paragraph>
             <Heading as="h4" fontSize={18} mt={4}>
               Libraries &amp; Frameworks
@@ -114,7 +114,8 @@ const Page = () => {
               Tools
             </Heading>
             <Paragraph>
-              Git, Github, Postman, pgadmin, AWS RDS, AWS EC2, AWS Cognito
+              Git, Github, Gitlab, Postman, pgadmin, AWS RDS, AWS EC2, AWS
+              Cognito, Salesforce
             </Paragraph>
           </Box>
         </Section>
@@ -145,6 +146,10 @@ const Page = () => {
           <BioSection>
             <BioYear>2022</BioYear>
             Worked at Kinexcs as a Fullstack Developer Intern.
+          </BioSection>
+          <BioSection>
+            <BioYear>2023</BioYear>
+            Worked at Shopback as a Software Developer Intern.
           </BioSection>
         </Section>
 
